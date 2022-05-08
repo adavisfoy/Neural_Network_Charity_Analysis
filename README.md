@@ -1,4 +1,4 @@
-# Neural Network Charity Analysis
+# Neural Network Charity Analysis: Alphabet Soup
 
 ## Background
 Beks has come a long way since her first day at that boot camp five years ago—and since earlier this week, when she started learning about neural networks! Now, she is finally ready to put her skills to work to help the foundation predict where to make investments.
