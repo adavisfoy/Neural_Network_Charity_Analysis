@@ -30,21 +30,48 @@ This analysis consists of three technical analysis deliverables and a written re
 - Deliverable 4: A Written Report on the Neural Network Model (README.md)
 
 ## Overview of the analysis: 
-Explain the purpose of this analysis.
+The purpose of this analysis was to utilize a neural network machine learning model (i.e. binary classifier) to predict whether or not applicants would be successful if funded by Alphabet Soup. The goal of this analysis is to help Alphabet Soup's business identify the optimal funding candidates. 
+
+We utilized the dataset to identify our target (IS_SUCCESSFUL) and features (multiple, see code) to train our model and make our predictions. 
 
 ## Results: 
 
 Using bulleted lists and images to support your answers, address the following questions.
 
 - Data Preprocessing
-  - What variable(s) are considered the target(s) for your model?
+  - What variable(s) are considered the target(s) for your model? 
+    - IS_SUCCESSFUL (Boolean - Yes/No)
   - What variable(s) are considered to be the features for your model?
+    - APPLICATION_TYPE
+    - AFFILIATION
+    - CLASSIFICATION
+    - USE-CASE
+    - ORGANIZATION
+    - STATUS
+    - INCOME_AMT
+    - SPECIAL_CONSIDERATIONS
+    - ASK_AMT
   - What variable(s) are neither targets nor features, and should be removed from the input data?
+    - EIN
+    - NAME
 
 - Compiling, Training, and Evaluating the Model
   - How many neurons, layers, and activation functions did you select for your neural network model, and why?
+    - On my third, and most successful, optimization attempt, I utilized 45 input features (columns), one combined input/hidden layer with 20 neurons, and the output layer. 
+    - I utilized the "relu" activation function on my first layer because I wanted to identify and train on nonlinear relationships in the dataset. 
+    - I utilized the "sigmoid" activation function on my output layer because our model was a classification model concerned with a yes or no binary decision (IS_SUCCESSFUL). In this case, I utilized a sigmoid activation function to produce a probability output.  
+    - The Keras module does not have specific classes for input, hidden, and output layers. We built the layers using the Dense class with the input and first hidden layer in the same instance. 
+    - We utilized the "Adam" optimization function to shape and mold our model while it was being trained. One benefit of the "Adam" optimizer is that it should prevent the algorithm from getting stuck on weaker classifying variables and features. 
+    - We utilized the "binary_crossentropy" loss function since it was specifically designed to evaluate a binary classification model such as this. 
   - Were you able to achieve the target model performance?
+   - I was not able to achieve the target model performance of 75% accuracy, but I was close on my 3rd optimization attempt (see code). 
+   - I achieved approximately 69% accuracy on my final optimization attempt. 
   - What steps did you take to try and increase model performance?
+    - added neurons to hidden layer
+    - added additional hidden layer(s)
+    - added epochs to training process
+    - removed columns that may not be useful for analysis
+    - experimented with the activation functions used in the layers
 
 ## Summary: 
 
